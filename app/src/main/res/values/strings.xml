@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Palette</string>
+    <string name="action_palette_size">Palette size</string>
+    <string name="action_oss_licenses">Open source licenses</string>
+
+    <string name="palette_size_8">8</string>
+    <string name="palette_size_16">16</string>
+    <string name="palette_size_24">24</string>
+
+    <string name="perm_required_camera">Camera permission required</string>
+    <string name="allow">Allow</string>
+
+    <string name="lvibrant">Light Vibrant</string>
+    <string name="vibrant">Vibrant</string>
+    <string name="dvibrant">Dark Vibrant</string>
+    <string name="lmuted">Light Muted</string>
+    <string name="muted">Muted</string>
+    <string name="dmuted">Dark Muted</string>
+</resources>
