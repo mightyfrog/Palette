@@ -149,6 +149,7 @@ class MainActivity : AppCompatActivity() {
         val view = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_swatches, root, false)
 
         val swatches = listOf(
+                palette.dominantSwatch,
                 palette.lightVibrantSwatch,
                 palette.vibrantSwatch,
                 palette.darkVibrantSwatch,
@@ -156,6 +157,7 @@ class MainActivity : AppCompatActivity() {
                 palette.mutedSwatch,
                 palette.darkMutedSwatch)
         val labels = listOf<TextView>(
+                view.findViewById(R.id.dominant_label),
                 view.findViewById(R.id.lvibrant_label),
                 view.findViewById(R.id.vibrant_label),
                 view.findViewById(R.id.dvibrant_label),
@@ -163,6 +165,7 @@ class MainActivity : AppCompatActivity() {
                 view.findViewById(R.id.muted_label),
                 view.findViewById(R.id.dmuted_label))
         val bodies = listOf<TextView>(
+                view.findViewById(R.id.dominant),
                 view.findViewById(R.id.lvibrant),
                 view.findViewById(R.id.vibrant),
                 view.findViewById(R.id.dvibrant),

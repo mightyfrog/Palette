@@ -5,6 +5,24 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/dominant_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/dominant"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dominant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp" />
+
+    <TextView
         android:id="@+id/lvibrant_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

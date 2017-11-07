@@ -10,6 +10,7 @@
     <string name="perm_required_camera">Camera permission required</string>
     <string name="allow">Allow</string>
 
+    <string name="dominant">Dominant</string>
     <string name="lvibrant">Light Vibrant</string>
     <string name="vibrant">Vibrant</string>
     <string name="dvibrant">Dark Vibrant</string>
