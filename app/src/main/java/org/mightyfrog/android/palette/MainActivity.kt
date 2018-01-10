@@ -129,10 +129,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun takePicture() {
         progressBar.visibility = View.VISIBLE
-        camera.takePicture()?.toBitmap()?.whenAvailable {
-            extractColors(it.bitmap)
-        } ?: run {
-            progressBar.visibility = View.GONE
+        camera.takePicture().toBitmap().whenAvailable { callback ->
+            callback?.apply {
+                extractColors(bitmap)
+            }
         }
     }
 
