@@ -3,11 +3,11 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "org.mightyfrog.android.palette"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -24,5 +24,5 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$support_version"
     implementation "com.android.support:design:$support_version"
     implementation "com.android.support:palette-v7:$support_version"
-    implementation "io.fotoapparat.fotoapparat:library:2.2.0"
+    implementation "io.fotoapparat:fotoapparat:2.3.3"
 }

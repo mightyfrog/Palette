@@ -138,8 +138,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun extractColors(bitmap: Bitmap) {
         val paletteSize = prefs.getInt("palette_size", 16)
-        Palette.from(bitmap).maximumColorCount(paletteSize).generate {
-            openBottomSheet(it)
+        Palette.from(bitmap).maximumColorCount(paletteSize).generate { palette ->
+            palette?.apply {
+                openBottomSheet(this)
+            }
             progressBar.visibility = View.GONE
         }
     }
