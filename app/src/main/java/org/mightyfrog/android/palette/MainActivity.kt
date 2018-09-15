@@ -26,9 +26,15 @@ import kotlinx.android.synthetic.main.activity_main.*
  */
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var prefs: SharedPreferences
+    private val prefs: SharedPreferences by lazy {
+        PreferenceManager.getDefaultSharedPreferences(this)
+    }
 
-    private lateinit var camera: Fotoapparat
+    private val camera: Fotoapparat by lazy {
+        Fotoapparat.with(this)
+                .into(cameraView)
+                .build()
+    }
 
     companion object {
         const val PERM_REQ_CAMERA = 0xCAFE + 1
@@ -38,8 +44,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        prefs = PreferenceManager.getDefaultSharedPreferences(this)
 
         checkCameraPermission()
 
@@ -52,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         when (requestCode) {
             PERM_REQ_CAMERA -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    init()
+                    camera.start()
                 } else {
                     showCameraPermissionSnackbar()
                 }
@@ -98,19 +102,10 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun init() {
-        fab.visibility = View.VISIBLE
-
-        camera = Fotoapparat.with(this)
-                .into(cameraView)
-                .build()
-        camera.start()
-    }
-
     private fun checkCameraPermission() {
         val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
         when (permissionCheck) {
-            PackageManager.PERMISSION_GRANTED -> init()
+            PackageManager.PERMISSION_GRANTED -> camera.start()
             else -> requestCameraPermission()
         }
     }
